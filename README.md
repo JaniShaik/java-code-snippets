@@ -1,15 +1,37 @@
-# Getting Started
+# DB configuration in SpringBoot
 
-### Steps to configure kafka
-Need to install Zookeeper and kafka in local. Download from below link:
+### Steps to configure MYSQL
 
-* [Kafka Download](https://kafka.apache.org/downloads)
+* application.yml
 
-### Steps to start kafka
-The following steps illustrate how to start kafka:
+spring:
+  datasource:    
+    url: jdbc:mysql://IPAddress:3306/DatabaseName        
+    username: xxxxx
+    password: xxxxx
+    driver-class-name: com.mysql.cj.jdbc.Driver  
 
-* Navigate to C:\kafka folder (kafka_2.12-3.4.0)\bin\windows, open cmd prompt.
-* zookeeper-server-start.bat ../../config/zookeeper.properties
-* kafka-server-start.bat ../../config/server.properties
+* build.gradle	
+
+dependencies {    
+    runtimeOnly 'com.mysql:mysql-connector-j'    
+}
+
+### Steps to configure SQLServer
+
+* application.yml
+
+spring:
+  datasource:    
+    url: jdbc:sqlserver://IPAddress:5001;databaseName=xxxxx        
+    username: xxxxx
+    password: xxxxx
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver  
+
+* build.gradle	
+
+dependencies {    
+    runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'    
+}
 
 
